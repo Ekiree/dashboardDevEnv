@@ -1,7 +1,7 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
+  imports = [
+    ./variables.nix
+  ];
   # Configure home-manager
   home = {
     username = "test";
