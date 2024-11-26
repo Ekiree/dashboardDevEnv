@@ -1,6 +1,9 @@
-Instalation instructions
+Installation instructions
 
-# 1 Download the flake
+# 1. Install Determinate Nix
+- `curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install`
+
+# 2. Download the flake for the development environment
 - run the command `git clone https://github.com/Ekiree/dashboardDevEnv.git`
 
 # 2 Update the values in the home.nix file
@@ -10,9 +13,9 @@ Instalation instructions
 
 # 3 Install the nix flake
 
-- run the command `nix-shell -p home-manager`
-- run the command `nix --extra-experimental-features nix-command --extra-experimental-features flakes home-manager -- switch - flake ./#dashboardDev`
+- run the command `nix shell nixpkgs#home-manager`
+- run the command `nix run home-manager -- switch --flake ./#dashboardDev`
 
-# 4 Remove programs installed with apt
-- run the command `sudo apt-get remove neovim git`
-
+# 4 Enable Dir Env
+- navigate to the directory with your dashboard installation
+- run the command `direnv allow` to enable the development environment
