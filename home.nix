@@ -22,9 +22,12 @@ in {
 
   # Docs: https://nixos.asia/en/direnv
   # run the command `direnv allow` to enable dev environments
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
+  programs = {
+    bash.enable = true;
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
   };
 
   # enabple experimental features like flakes and nix command

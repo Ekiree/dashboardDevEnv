@@ -1,6 +1,6 @@
 {
   user = {
     username = "<username>";
-    hostmane = "/home/<username>";
+    hostname = "/home/<username>";
   };
 }
