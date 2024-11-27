@@ -1,11 +1,10 @@
-{pkgs, ...}: {
-  imports = [
-    ./variables.nix
-  ];
+{pkgs, ...}: let
+  userConfig = import ./variables.nix;
+in {
   # Configure home-manager
   home = {
-    username = "test";
-    homeDirectory = "/home/test";
+    username = userConfig.user.username;
+    homeDirectory = userConfig.user.hostname;
 
     # Install packages with home-manager
     packages = with pkgs; [
